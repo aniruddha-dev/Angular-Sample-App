@@ -17,6 +17,7 @@ import { ChildComponent } from './communication/child/child.component';
 import { AppService } from './shared/services/app.service';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { PropertyBindingComponent } from './property-binding/property-binding.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     CommunicationComponent,
     ChildComponent,
     ReactiveFormComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    PropertyBindingComponent
   ],
   imports: [
     BrowserModule,

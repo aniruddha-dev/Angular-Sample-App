@@ -9,6 +9,7 @@ import { CommunicationComponent } from './communication/communication.component'
 import { every } from 'rxjs';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { PropertyBindingComponent } from './property-binding/property-binding.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'property-binding',
+    component: PropertyBindingComponent
   },
   {
     path: 'data-binding',
