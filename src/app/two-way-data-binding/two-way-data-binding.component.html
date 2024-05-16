@@ -1,0 +1,16 @@
+<div style="padding: 20px">
+    <!-- One way data binding -->
+  <label for="title">{{ title }}</label>
+
+  <br />
+  <!-- Two way data binding -->
+  <input style="margin-top: 5px;" type="text" [(ngModel)]="firstName" placeholder="Enter first name" />
+  <br />
+  <input style="margin-top: 5px;" type="text" [(ngModel)]="lastName" placeholder="Enter last name" />
+</div>
+
+<!-- <div style="margin-top: 5px;"><button (click)="onSave()">Save</button></div> -->
+
+<div style="margin-top: 5px;">My full name: <label for="title">{{ firstName }} {{lastName}}</label></div>
+
+ 

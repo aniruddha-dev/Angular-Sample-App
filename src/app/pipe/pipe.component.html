@@ -1,0 +1,76 @@
+<div>
+  <h2>Using DatePipe</h2>
+  <p>Current date: {{ birthday | date }}</p>
+  <p>Current date: {{ birthday | date : "fullDate" }}</p>
+  <p>Current date: {{ birthday | date : "short" }}</p>
+</div>
+
+<div>
+  <h2>Using CurrencyPipe</h2>
+  <p>A: {{ amount | currency }}</p>
+  <p>A: {{ amount | currency: 'CAD' }}</p>
+</div>
+
+<div>
+  <h2>Using JsonPipe</h2>
+  <pre>{{ myObject | json }}</pre>
+</div>
+
+<div>
+  <h2>Using LowerCasePipe</h2>
+  <p>Original String: {{ myString }}</p>
+  <p>Lowercased String: {{ myString | lowercase }}</p>
+</div>
+
+<div>
+  <h2>Using UpperCasePipe</h2>
+  <p>Original String: {{ myString }}</p>
+  <p>Uppercased String: {{ myString | uppercase }}</p>
+</div>
+
+<h2>Using TitleCasePipe</h2>
+<p>Original String: {{ myString }}</p>
+<p>Transformed String: {{ myString | titlecase }}</p>
+
+<div>
+  <h2>Using PercentPipe</h2>
+  <p>Original Number: {{ myNumber }}</p>
+  <p>Percentage Value: {{ myNumber | percent }}</p>
+</div>
+
+<div>
+  <h2>Using SlicePipe on Array</h2>
+  <p>Original Array: {{ myArray }}</p>
+  <p>Sliced Array: {{ myArray | slice : 1 : 3 }}</p>
+</div>
+
+<div>
+  <h2>Using SlicePipe on String</h2>
+  <p>Original String: {{ myString }}</p>
+  <p>Sliced String: {{ myString | slice : 0 : 16 }}</p>
+</div>
+
+<div>
+  <h2>Using SlicePipe on String</h2>
+  <p>
+    The chained hero's uppercase birthday is
+    {{ birthday | date | uppercase }}
+  </p>
+</div>
+
+<div>
+  <h2>Power Boost Calculator</h2>
+  <label for="power-input">Normal power: </label>
+  <input id="power-input" type="text" [(ngModel)]="power" />
+  <label for="boost-input">Boost factor: </label>
+  <input id="boost-input" type="text" [(ngModel)]="factor" />
+
+  <p>Super Hero Power: {{ power | exponentialStrength : factor }}</p>
+</div>
+
+<div>
+    <h2>Using Custom Pipe</h2>
+    <ul>
+      <li *ngFor="let value of fruits | filterByLength: 6 ">{{ value | titlecase }}</li>
+    </ul>
+</div>

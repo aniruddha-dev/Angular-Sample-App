@@ -1,0 +1,88 @@
+<!-- Structural Directive -->
+<div class="section-margin">
+  <h2>Structural Directive</h2>
+  <div *ngIf="hasUserName">
+    <p>Welcome, {{ firstName }} {{ lastName }}!</p>
+  </div>
+
+  <div style="margin-top: 20px; margin-bottom: 20px">
+    <label>Users:</label>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Annual Salary</th>
+          <th>Date of Birth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td [appHover]="getHoverColor(user)">{{ user.gender }}</td>
+          <td>{{ user.annualSalary }}
+
+            <div [ngSwitch]="user.annualSalary">
+              <div *ngSwitchCase="100000">Lower Salary</div>
+              <div *ngSwitchCase="200000">Mid Salary</div>
+              <div *ngSwitchCase="300000">Higher Salary</div>
+              <div *ngSwitchDefault>Intership</div>
+            </div>
+          
+          </td>
+          <td>{{ user.dateOfBirth }}</td>
+        </tr>
+        <tr *ngIf="!users || users.length == 0">
+          <td colspan="5">No users to display</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div [ngSwitch]="inpvalue">
+  <p *ngSwitchCase="1">You selected Monday</p>
+  <p *ngSwitchCase="2">You selected Tuesday</p>
+  <p *ngSwitchCase="3">You selected Wednesday</p>
+  <p *ngSwitchDefault>Sorry Invalid selection!!</p>
+</div>
+
+<!-- Attribute Directive -->
+<div class="section-margin">
+  <h2>Attribute Directive</h2>
+  <div
+    [ngClass]="{
+      'bg-success': firstName.length > 0 && lastName.length > 0,
+      'bg-error': firstName.length == 0 || lastName.length === 0
+    }"
+  >
+    Fullname: {{ firstName }} {{ lastName }}
+  </div>
+
+  <button class="colorClass" [ngClass]="applyClasses()">
+    Style Applied Using Class
+  </button>
+
+  <div [ngStyle]="{ color: lastName.length <= 0 ? 'red' : 'green' }">
+    lastName: {{ lastName }}
+  </div>
+
+  <div [ngStyle]="ApplyStyles()">Firstname: {{ firstName }}</div>
+</div>
+
+<!-- Custom Directive -->
+<div class="section-margin">
+  <h2>Custom Directive</h2>
+
+  <p [appHover]="'green'" style="font-size: 1.5rem">
+    Angular directives are a powerful tool for building dynamic and interactive
+    web applications. They allow you to manipulate the DOM, control the
+    rendering of elements, and encapsulate reusable behaviour. By understanding
+    and effectively using directives, you can create more maintainable and
+    flexible Angular applications. Start experimenting with directives in your
+    projects, and you’ll discover their true potential.
+  </p>
+</div>

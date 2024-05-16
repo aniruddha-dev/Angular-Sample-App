@@ -1,0 +1,23 @@
+<b>In Home Component!</b>
+
+<div>
+  <h2>Passing Router Param Through route service</h2>
+  <button type="button" (click)="navigateByUsingRouteParameter()">
+    Navigate To Communication
+  </button>
+</div>
+
+<div>
+  <h2>Passing Query Param Through routerLink Directive</h2>
+  <button type="button" [routerLink]="['/communication']" [queryParams]="{ id: '103' }">
+    Go To Communication
+  </button>
+</div>
+
+<div>
+  <h2>Passing Query Param Through route Service</h2>
+  <button type="button" (click)="navigateByUsingQueryParam()">
+    Navigate To Communication
+  </button>
+</div>
+

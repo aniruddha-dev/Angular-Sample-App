@@ -1,0 +1,27 @@
+<!-- event is passed to function -->
+<div style="padding: 20px">
+  <div style="margin-top: 5px">
+    <h3>KeyDown Event</h3>
+    <input (keydown)="onKeyDown($event)" />
+  </div>
+
+  <div style="margin-top: 5px">
+    <h3>KeyUp Event</h3>
+    <input (keyup)="onKeyUp($event)" />
+  </div>
+
+  <div style="margin-top: 5px">
+    <h3>Click Event</h3>
+    <input (click)="onClick($event)" value="" />
+  </div>
+
+  <div style="margin-top: 5px">
+    <h3>Change Event</h3>
+    <input (change)="onChange($event)" value="" />
+  </div>
+
+  <p>Input value: {{ input }}</p>
+</div>
+
+
+<!-- keyup, keydown, keypress, click, change -->

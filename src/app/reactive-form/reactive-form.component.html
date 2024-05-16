@@ -1,0 +1,61 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Name:
+      <input formControlName="name" placeholder="Your name">
+    </label>
+    <div *ngIf="myForm.get('name')?.invalid && (myForm.get('name')?.dirty || myForm.get('name')?.touched)">
+      Please provide a name.
+    </div>
+  </div>
+  <div style="margin-top: 15px;">
+    <label>
+      Email:
+      <input formControlName="email" placeholder="Your email">
+    </label>
+    <button style="margin-left: 10px;" (click)="onAddMobileNumber()">Add Mobile</button>
+
+    <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+      Please provide a valid email address.
+    </div>
+  </div> 
+
+  <div *ngIf="myForm.get('mobileNo')" style="margin-top: 15px;">
+    <label>
+      Mobile No:
+      <input formControlName="mobileNo" placeholder="Your mobile no">
+    </label>
+    <div *ngIf="myForm.get('mobileNo')?.invalid && (myForm.get('mobileNo')?.dirty || myForm.get('mobileNo')?.touched)">
+      <!-- <span *ngIf="myForm.get('mobileNo')?.errors('required')">Mobile number is required.</span>
+      <span *ngIf="myForm.get('mobileNo')?.errors('maxlength') || ">Mobile number should be 10 digit.</span> -->
+
+      <span>Mobile number should be 10 digit.</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <label>
+      Message:
+      <input formControlName="message" placeholder="Your message">
+    </label>
+    <div *ngIf="myForm.get('message')?.invalid && (myForm.get('message')?.dirty || myForm.get('message')?.touched)">
+      Messages must be at least 15 characters long.
+    </div>
+  </div>
+
+  <!-- Custom validator -->
+  <div style="margin-top: 15px;">
+    <label>
+      Website:
+      <input formControlName="websiteUrl" placeholder="Your website">
+    </label>
+    <div *ngIf="myForm.get('websiteUrl')?.invalid && (myForm.get('websiteUrl')?.dirty || myForm.get('websiteUrl')?.touched)">
+      Only URLs served over HTTPS and from the .io top-level domain are accepted.
+    </div>
+  </div>
+  
+  <div>
+    <button style="margin-top: 15px;" type="submit">Send</button>
+    <button style="margin-left: 15px;" (click)="onReset()">Reset</button>
+  </div>
+</form>
